@@ -143,8 +143,7 @@ act_dat_imp$day <- sapply(act_dat_imp$date, FUN = day_type)
  
 Panel plotting
 ```{r} 
- #Panel plot containnig a time-series plot of the 5-minute interval
-#and the average number of steps taken across all weekdays or weekends
+
 steps_by_day_mean <-aggregate(steps ~ interval+day, act_dat_imp, mean)
 ggplot(data = steps_by_day_mean, aes(x = interval, y = steps)) + 
   geom_line() +
